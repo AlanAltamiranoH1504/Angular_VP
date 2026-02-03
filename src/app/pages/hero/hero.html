@@ -1,0 +1,50 @@
+<h1>
+  <span class="font-semibold">{{ name() }}</span>
+</h1>
+
+<dl class="space-y-3">
+  <div class="flex flex-col md:flex-row">
+    <td>Nombre:</td>
+    <dd>{{ name() }}</dd>
+  </div>
+
+  <div class="flex flex-col md:flex-row">
+    <td>Edad:</td>
+    <dd>{{ age() }}</dd>
+  </div>
+
+  <div class="flex flex-col md:flex-row">
+    <td>Método:</td>
+    <dd>{{ getHeroDescription() }}</dd>
+  </div>
+
+  <div class="flex flex-col md:flex-row">
+    <td>Capitalizado:</td>
+    <dd>{{ upperCaseName() }}</dd>
+    <!-- ! Intentar  -->
+    <!-- <dd> {{ 'Mostrar nombre TODO EN MAYÚSCULAS' }} </dd> -->
+  </div>
+</dl>
+
+<div class="mt-5 space-x-4">
+  <button
+    (click)="changeHero()"
+    class="border px-3 py-2 rounded-xl bg-green-600 text-white font-semibold cursor-pointer transition-colors duration-500 hover:bg-green-700"
+  >
+    Cambiar nombre
+  </button>
+
+  <button
+    (click)="chageAge()"
+    class="border px-3 py-2 rounded-xl bg-blue-500 text-white font-semibold cursor-pointer transition-colors duration-500 hover:bg-blue-600"
+  >
+    Cambiar edad
+  </button>
+
+  <button
+    (click)="resetForm()"
+    class="border px-3 py-2 rounded-xl bg-red-500 text-white font-semibold cursor-pointer transition-colors duration-500 hover:bg-red-700"
+  >
+    Reset
+  </button>
+</div>
