@@ -1,0 +1,18 @@
+<h1 class="text-center text-xl uppercase font-semibold mb-2">{{ listName() }}</h1>
+<div class="container mx-auto h-32 px-10 overflow-y-auto">
+  <ol class="list-disc flex gap-3 flex-col">
+    @for (character of characters(); track character.id) {
+      @if (character.power < 9000) {
+        <li>
+          <p class="font-semibold">
+            Nombre: <span class="font-normal">{{ character.name }}</span>
+          </p>
+          <p class="font-semibold">
+            Poder:
+            <span [class.text-red-500]="character.power >= 9000">{{ character.power }} puntos</span>
+          </p>
+        </li>
+      }
+    }
+  </ol>
+</div>

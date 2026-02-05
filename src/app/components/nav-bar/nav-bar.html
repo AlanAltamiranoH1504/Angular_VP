@@ -1,0 +1,34 @@
+<nav class="flex md:flex-row flex-col gap-6">
+  <a
+    class="border px-3 py-1 rounded-md font-semibold bg-blue-500 hover:bg-blue-600 transition-colors duration-500 text-white"
+    routerLink=""
+    routerLinkActive="active"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Contador</a
+  >
+  <a
+    class="border px-3 py-1 rounded-md font-semibold bg-green-600 hover:bg-green-700 transition-colors duration-500 text-white"
+    routerLinkActive="active"
+    routerLink="/hero"
+    [routerLinkActiveOptions]="{ exact: true }"
+    >Hero</a
+  >
+
+  <a
+    class="border px-3 py-1 rounded-md font-semibold bg-purple-500 hover:bg-purple-600 transition-colors duration-500 text-white"
+    routerLinkActive="active"
+    routerLink="/dragonball"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    Dragon Ball
+  </a>
+
+  <a
+    class="border px-3 py-1 rounded-md font-semibold bg-purple-500 hover:bg-purple-600 transition-colors duration-500 text-white"
+    routerLinkActive="active"
+    routerLink="/drangonball-super"
+    [routerLinkActiveOptions]="{ exact: true }"
+  >
+    Dragon Ball Super
+  </a>
+</nav>

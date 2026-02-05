@@ -1,0 +1,82 @@
+<section class="container mx-auto my-5 flex md:flex-row flex-col">
+  <div class="w-1/2">
+    <h1 class="text-center text-2xl font-bold my-5">Dragon Ball Form</h1>
+
+    <form class="border p-5 rounded-md shadow-md bg-white">
+      <div class="mb-5">
+        <label class="font-semibold w-full uppercase mb-5">Agregar Personaje</label>
+        <input
+          type="text"
+          class="border px-3 py-2 w-full rounded-xl shadow-md"
+          placeholder="Nombre del personaje"
+          (input)="save_name($event)"
+        />
+      </div>
+
+      <div class="mb-5">
+        <label class="font-semibold w-full uppercase mb-5">Pdoer del Personaje</label>
+        <input
+          type="text"
+          class="border px-3 py-2 w-full rounded-xl shadow-md"
+          placeholder="Poder del personaje"
+          (input)="save_power($event)"
+        />
+      </div>
+
+      <div class="mb-5 flex justify-center items-center">
+        <input
+          (click)="save_character()"
+          type="button"
+          value="Agregar personaje"
+          class="w-60 border px-3 py-2 rounded-xl uppercase bg-green-600 hover:bg-green-700 transition-colors duration-500 cursor-pointer text-white font-semibold"
+        />
+      </div>
+    </form>
+  </div>
+
+  <div class="w-1/2">
+    <h1 class="text-center text-2xl font-bold my-5">Dragon Ball Listado</h1>
+
+    <h2 class="font-semibold text-center">Personajes Fuertes</h2>
+    <div class="container mx-auto h-32 px-10 overflow-y-auto">
+      <ol class="list-disc flex gap-3 flex-col">
+        @for (character of characters(); track character.id) {
+          @if (character.power > 9000) {
+            <li>
+              <p class="font-semibold">
+                Nombre: <span class="font-normal">{{ character.name }}</span>
+              </p>
+              <p class="font-semibold">
+                Poder:
+                <span [class.text-red-500]="character.power >= 9000"
+                  >{{ character.power }} puntos</span
+                >
+              </p>
+            </li>
+          }
+        }
+      </ol>
+    </div>
+
+    <h2 class="font-semibold text-center">Personaje Bajos</h2>
+    <div class="container mx-auto h-32 px-10 overflow-y-auto">
+      <ol class="list-disc flex gap-3 flex-col">
+        @for (character of characters(); track character.id) {
+          @if (character.power < 9000) {
+            <li>
+              <p class="font-semibold">
+                Nombre: <span class="font-normal">{{ character.name }}</span>
+              </p>
+              <p class="font-semibold">
+                Poder:
+                <span [class.text-red-500]="character.power >= 9000"
+                  >{{ character.power }} puntos</span
+                >
+              </p>
+            </li>
+          }
+        }
+      </ol>
+    </div>
+  </div>
+</section>
